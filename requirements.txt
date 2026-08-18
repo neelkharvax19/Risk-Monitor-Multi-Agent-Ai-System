@@ -1,0 +1,14 @@
+langgraph
+langchain
+langchain-anthropic
+pinecone
+langchain-huggingface
+slack-sdk
+python-dotenv
+sentence-transformers
+streamlit
+requests
+ccxt
+pypdf
+langchain-community
+langchain-text-splitters

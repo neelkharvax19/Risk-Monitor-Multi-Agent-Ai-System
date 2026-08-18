@@ -1,0 +1,5 @@
+{
+  "portfolio_A": {"margin": 0.75, "exposure": 1200000},
+  "portfolio_B": {"margin": 0.45, "exposure": 450000},
+  "portfolio_C": {"margin": 0.92, "exposure": 2300000}
+}
