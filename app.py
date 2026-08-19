@@ -176,7 +176,7 @@ with tab1:
                     
             except Exception as e:
                 status_container.update(label="Error occurred", state="error")
-                st.error(f"An error occurred: {e}")
+                st.exception(e)
 
 # ==========================================
 # TAB 2: KNOWLEDGE BASE (PDF RAG)
