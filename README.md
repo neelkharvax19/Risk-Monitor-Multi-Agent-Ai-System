@@ -23,7 +23,7 @@ Built on **LangGraph** with **Claude 3.5** as the reasoning engine, it processes
 | Agent | Role | Technology |
 | :--- | :--- | :--- |
 | **Supervisor** | The orchestrator. Routes tasks based on real-time context. | LangGraph State Machine |
-| **Data Agent** | Fetches live balances, positions, and margin from exchanges. | Binance Demo API / HMAC Auth |
+| **Data Agent** | Fetches live balances, positions, and margin from exchanges. | Binance API / HMAC Auth |
 | **RAG Agent** | Retrieves institutional risk policies from a vector database. | Pinecone + Sentence Transformers |
 | **Quant Agent** | Runs 10,000 Monte Carlo simulations to forecast liquidation risk. | NumPy / SciPy |
 | **Macro Agent** | Scans global news headlines for black-swan triggers (SEC, Hacks). | NewsAPI |
@@ -83,7 +83,7 @@ Built on **LangGraph** with **Claude 3.5** as the reasoning engine, it processes
 - **Orchestration**: LangGraph, LangChain, LangSmith
 - **LLM**: Claude 3.5 (Anthropic) / AWS Bedrock
 - **Vector DB**: Pinecone (Serverless)
-- **Exchange**: Binance Demo API (Zero-KYC, fake funds)
+- **Exchange**: Binance API (Zero-KYC, funds)
 - **Monitoring**: Custom Z-score Anomaly Detection
 - **Notifications**: Slack SDK, Mailtrap SMTP
 - **Quant Library**: NumPy, Pandas, SciPy
@@ -108,9 +108,9 @@ pip install -r requirements.txt
 
 ### 3. Configure Environment (`.env`)
 ```env
-# Exchange (Binance Demo)
-BINANCE_DEMO_API_KEY=your_key
-BINANCE_DEMO_SECRET_KEY=your_secret
+# Exchange (Binance)
+BINANCE_API_KEY=your_key
+BINANCE_SECRET_KEY=your_secret
 
 # Vector Database
 PINECONE_API_KEY=your_pinecone_key
@@ -208,7 +208,7 @@ In one recent test, the RAG Agent wanted to fire an alert for a minor margin spi
 Pull requests are welcome! For major changes, please open an issue first to discuss what you would like to change.
 
 **Maintainer**: Neel Kharva  
-**Portfolio**: [crackone.org](https://crackone.org)
+**Portfolio**: https://www.neelkharva.in/
 
 ---
 
