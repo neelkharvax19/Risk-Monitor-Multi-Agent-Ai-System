@@ -47,7 +47,7 @@ def build_graph():
     return builder.compile()
 
 if __name__ == "__main__":
-    print("Starting Risk Monitor Multi-Agent System...")
+    print("Starting ARISE Intelligence...")
     
     # Verify Anthropic Key
     if not os.environ.get("ANTHROPIC_API_KEY") or os.environ.get("ANTHROPIC_API_KEY") == "your_key_here":

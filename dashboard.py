@@ -10,7 +10,7 @@ from main import build_graph
 # Setup LangGraph
 app = build_graph()
 
-st.set_page_config(page_title="Risk Monitor Control Room", page_icon="🤖", layout="wide")
+st.set_page_config(page_title="ARISE Intelligence", page_icon="🤖", layout="wide")
 
 # Custom CSS for a Bloomberg-style dark mode feel
 st.markdown("""
@@ -68,7 +68,7 @@ with st.sidebar:
                 time.sleep(2)
                 st.rerun()
 
-st.title("🤖 Multi-Agent Risk Control Room")
+st.title("🤖 ARISE Intelligence")
 st.markdown("---")
 
 col1, col2, col3 = st.columns(3)

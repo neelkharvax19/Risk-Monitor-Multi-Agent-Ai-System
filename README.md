@@ -1,6 +1,6 @@
-# 🤖 Multi-Agent Risk Monitoring System
+# 🤖 ARISE Intelligence
 
-### *AI-Powered Fiduciary Guardian for Digital Asset Portfolios*
+### *Your AI Guardian for Crypto.*
 
 [![Python 3.11+](https://img.shields.io/badge/Python-3.11+-blue.svg)](https://www.python.org/)
 [![LangGraph](https://img.shields.io/badge/LangGraph-0.2+-green.svg)](https://langchain.com/langgraph)
@@ -12,7 +12,7 @@
 
 ## 📖 Overview
 
-This is not just a trading alert bot. It is a **multi-agent AI control room** that continuously monitors portfolio exposure, cross-references dynamic risk policies, detects statistical anomalies, and decides **when to alert**—and crucially, **when to stay silent**.
+This is not just a trading alert bot. It is **ARISE Intelligence — a Multi-Agent AI Risk & Security System for Digital Asset Portfolios** that continuously monitors portfolio exposure, cross-references dynamic risk policies, detects statistical anomalies, and decides **when to alert**—and crucially, **when to stay silent**.
 
 Built on **LangGraph** with **Claude 3.5** as the reasoning engine, it processes **15,000+ risk events per day** and reduces false-positive alerts by over **62%** through strategic context-awareness (macro sentiment, exchange health, fee optimization, and circadian rhythms).
 
