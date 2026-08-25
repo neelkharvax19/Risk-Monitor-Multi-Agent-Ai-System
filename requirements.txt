@@ -1,14 +1,72 @@
-langgraph
-langchain
-langchain-anthropic
-pinecone
-langchain-huggingface
-slack-sdk
-python-dotenv
-sentence-transformers
-streamlit
-requests
-ccxt
-pypdf
-langchain-community
-langchain-text-splitters
+# ============================================
+# CORE FRAMEWORK & AI
+# ============================================
+langgraph>=0.2.0
+langchain>=0.3.0
+langchain-community>=0.3.0
+langchain-text-splitters>=0.3.0
+langsmith>=0.1.0
+python-dotenv>=1.0.0
+
+# ============================================
+# VECTOR DATABASE (RAG)
+# ============================================
+pinecone-client>=5.0.0
+sentence-transformers>=2.2.0
+
+# ============================================
+# DOCUMENT PARSING (PDF Ingestion)
+# ============================================
+pypdf>=4.0.0
+
+# ============================================
+# EXCHANGE & HTTP (Binance Demo + APIs)
+# ============================================
+requests>=2.31.0
+urllib3>=2.0.0
+
+# ============================================
+# SLACK & EMAIL ALERTING
+# ============================================
+slack-sdk>=3.27.0
+# smtplib and email are built-in, no install needed.
+
+# ============================================
+# QUANT / MONTE CARLO (Upgrade #3)
+# ============================================
+numpy>=1.26.0
+pandas>=2.1.0
+scipy>=1.11.0
+
+# ============================================
+# SCHEDULING & DAEMON (24/7 Monitoring)
+# ============================================
+apscheduler>=3.10.0
+schedule>=1.2.0
+
+# ============================================
+# MACRO NEWS SENTIMENT (Upgrade #6)
+# ============================================
+newsapi-python>=0.2.7
+
+# ============================================
+# MCP SERVER (Model Context Protocol)
+# ============================================
+mcp>=0.1.0
+
+# ============================================
+# AWS DEPLOYMENT (ECS/ECR/Lambda)
+# ============================================
+boto3>=1.34.0
+
+# ============================================
+# WEB SERVER (Optional: Streamlit/FastAPI for UI)
+# ============================================
+fastapi>=0.110.0
+uvicorn>=0.27.0
+streamlit>=1.30.0  # For your chat UI
+
+# ============================================
+# UTILITY
+# ============================================
+typing-extensions>=4.8.0

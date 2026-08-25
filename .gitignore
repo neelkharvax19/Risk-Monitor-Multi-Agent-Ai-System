@@ -1,6 +1,5 @@
 # Environment Variables
 .env
-
 # Python Cache
 __pycache__/
 *.pyc
@@ -18,3 +17,8 @@ env/
 
 # Documents (Optional, but usually a good idea not to push private PDFs)
 docs/
+
+# Audit Reports & Logs (CRITICAL TO IGNORE FOR OPEN SOURCE)
+audit_reports/
+*.log
+email_log.txt

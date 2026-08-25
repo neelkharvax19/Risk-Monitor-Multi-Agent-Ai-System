@@ -11,3 +11,8 @@ class AgentState(TypedDict):
     
     # The next node to route to
     next: str
+    
+    anomaly_detected: bool
+    anomaly_deviation: float
+    alert_triggered: bool
+    risk_metrics: dict

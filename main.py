@@ -9,7 +9,7 @@ os.environ["LANGCHAIN_TRACING_V2"] = "true"
 os.environ["LANGCHAIN_PROJECT"] = "risk-monitor-system"
 from langgraph.graph import StateGraph, START, END
 from state import AgentState
-from agents import supervisor_node, data_agent_node, rag_agent_node, alert_agent_node
+from agent_nodes import supervisor_node, data_agent_node, rag_agent_node, alert_agent_node, macro_agent_node
 from langchain_core.messages import HumanMessage
 
 def build_graph():
@@ -20,12 +20,13 @@ def build_graph():
     builder.add_node("Data_Agent", data_agent_node)
     builder.add_node("RAG_Agent", rag_agent_node)
     builder.add_node("Alert_Agent", alert_agent_node)
+    builder.add_node("Macro_Agent", macro_agent_node)
 
     # Set entry point
     builder.add_edge(START, "Supervisor")
 
     # The router logic
-    members = ["Data_Agent", "RAG_Agent"]
+    members = ["Data_Agent", "RAG_Agent", "Macro_Agent"]
     for member in members:
         # Workers always report back to supervisor
         builder.add_edge(member, "Supervisor")
@@ -38,6 +39,7 @@ def build_graph():
         "Data_Agent": "Data_Agent",
         "RAG_Agent": "RAG_Agent",
         "Alert_Agent": "Alert_Agent",
+        "Macro_Agent": "Macro_Agent",
         "FINISH": END
     }
     builder.add_conditional_edges("Supervisor", lambda x: x["next"], conditional_map)

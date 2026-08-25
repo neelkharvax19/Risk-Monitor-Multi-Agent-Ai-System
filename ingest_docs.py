@@ -33,23 +33,24 @@ if not PINECONE_API_KEY or PINECONE_API_KEY == "your_key_here":
 pc = Pinecone(api_key=PINECONE_API_KEY)
 
 # Step 3: Check if index exists, create if not
-if INDEX_NAME not in pc.list_indexes().names():
-    print(f"Creating Pinecone index: {INDEX_NAME}...")
-    pc.create_index(
-        name=INDEX_NAME,
-        dimension=384,  # Must match the embedding model dimension (all-MiniLM-L6-v2)
-        metric="cosine",
-        spec=ServerlessSpec(
-            cloud="aws",
-            region="us-east-1"  # Use any region available in your Pinecone account
-        )
+if INDEX_NAME in pc.list_indexes().names():
+    print(f"Deleting old Pinecone index: {INDEX_NAME}...")
+    pc.delete_index(INDEX_NAME)
+
+print(f"Creating Pinecone index: {INDEX_NAME}...")
+pc.create_index(
+    name=INDEX_NAME,
+    dimension=384,  # Must match the embedding model dimension (all-MiniLM-L6-v2)
+    metric="cosine",
+    spec=ServerlessSpec(
+        cloud="aws",
+        region="us-east-1"  # Use any region available in your Pinecone account
     )
-    # Wait for index to be ready
-    while not pc.describe_index(INDEX_NAME).status['ready']:
-        time.sleep(1)
-    print("Index created and ready.")
-else:
-    print(f"Index '{INDEX_NAME}' already exists. Using existing index.")
+)
+# Wait for index to be ready
+while not pc.describe_index(INDEX_NAME).status['ready']:
+    time.sleep(1)
+print("Index created and ready.")
 
 # Step 4: Connect to the index
 index = pc.Index(INDEX_NAME)
